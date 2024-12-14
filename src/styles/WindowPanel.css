@@ -1,0 +1,14 @@
+.window-panel {
+  height: 80vh; /* Height of the blank window */
+  background: transparent; /* Make it transparent */
+}
+
+.bg-image {
+  position: fixed; /* Ensures the background doesn't scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100000; /* Push it behind all other elements */
+  overflow: hidden;
+}

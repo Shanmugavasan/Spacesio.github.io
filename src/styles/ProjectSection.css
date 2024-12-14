@@ -1,0 +1,197 @@
+/* Import Playfair Display font */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* General Project Section Styles */
+.project-section {
+  padding: 0; /* Removed padding to avoid space on left and right */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  margin: 0; /* Removed margin to avoid extra space */
+  box-sizing: border-box;
+  bottom: 10px;
+}
+
+/* Project Heading */
+.project-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #333;
+  font-family: "Playfair Display", serif;
+}
+
+/* Project List and Cards */
+.project-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Adjust the dimensions of the project cards */
+.project-card {
+  flex: 1 1 23%; /* Distribute 4 cards in one row, each taking 23% of the width */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  min-width: 300px; /* Ensure a minimum width */
+  max-width: 360px; /* Set a max width for cards */
+  height: auto; /* Allow height to adjust dynamically */
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure content does not overflow */
+}
+
+/* Project Thumbnail */
+.project-thumbnail {
+  width: 100%; /* Make the image fill the width of the card */
+  height: auto; /* Adjust height proportionally */
+  object-fit: cover; /* Ensure the image covers the card proportionally */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-thumbnail:hover {
+  transform: scale(1.1); /* Scale image on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Project Title */
+.project-title {
+  margin-top: 15px; /* Add spacing between the image and the title */
+  padding: 0.5rem 0; /* Add padding to create space around the title */
+  color: #333; /* Ensure visible text color */
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem; /* Adjust font size for readability */
+  text-align: center; /* Center the title */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for long titles */
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Swiper Container */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 0px;
+  display: block;
+}
+
+/* Close Button Styles */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Prevent Overflow on Body */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 1 1 45%; /* Adjust to fit 2 items per row on medium screens */
+    min-width: 300px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 1 1 45%; /* Adjust to fit 2 items per row */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    flex: 1 1 100%; /* Full-width cards */
+    min-width: 100%; /* Remove min-width to prevent breaking */
+    height: auto;
+    display: flex;
+    flex-direction: column; /* Ensure content is stacked */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    padding: 15px; /* Adjust padding for small screens */
+  }
+
+  .swiper-container {
+    max-width: 100vw;
+    max-height: 70vh;
+  }
+
+  .close-button {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+}

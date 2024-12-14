@@ -1,0 +1,112 @@
+/* Import Playfair Display font */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Services section */
+.services-section {
+  padding: 0; /* Remove padding on all sides */
+  margin: 0; /* Remove margin to avoid extra space */
+  padding-top: 60px;
+  padding-bottom: 60px; /* Add space below the section */
+  background-color: #f4f4f4;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: "Playfair Display", serif;
+  box-sizing: border-box;
+  width: 100%; /* Ensures full width */
+}
+
+/* Flex container for the services */
+.service-container {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 20px; /* Space between items */
+  width: 100%; /* Full width of the parent */
+  margin: 0; /* Remove any extra space around the container */
+  padding: 0; /* No padding inside the container */
+  box-sizing: border-box;
+}
+
+/* Individual service item */
+.service-item {
+  flex: 1 1 calc(33.33% - 20px); /* Divide into three equal columns */
+  max-width: calc(33.33% - 20px); /* Prevent overflow */
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Stack title and description vertically */
+}
+
+/* Services heading */
+.services-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #333;
+  font-family: "Playfair Display", serif; /* Playfair Display font for the heading */
+}
+
+.service-item:hover {
+  transform: translateY(-10px); /* Hover effect: slight lift */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Container for image */
+.service-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-bottom: 5px solid #ddd;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover .service-image {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Service info (title and description) */
+.service-info {
+  padding: 20px;
+}
+
+.service-title {
+  font-size: 1.75rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif; /* Playfair Display font for the title */
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: #777;
+  font-family: "Playfair Display", serif; /* Playfair Display font for the description */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .service-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Stretch items to fit container width */
+  }
+
+  .service-item {
+    flex: 1 1 100%; /* Full width for each item */
+    max-width: 100%; /* Remove width restriction */
+  }
+  .services-heading {
+    font-size: 2rem;
+  }
+}

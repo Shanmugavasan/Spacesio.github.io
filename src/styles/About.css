@@ -1,0 +1,143 @@
+/* Import Playfair Display Font */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Apply Playfair Display to everything */
+body {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #2c3e50; /* Deep grey for a sophisticated look */
+}
+
+/* About Section Styles */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #ffffff;
+  text-align: justify;
+}
+
+.about-top {
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  align-items: center; /* Align items at the start vertically */
+  justify-content: center; /* Center the content horizontally */
+  gap: 20px; /* Add spacing between the image and the text */
+  padding: 40px 10px 40px 0px;
+  background: #f9f7f5;
+  /* Add the following rules */
+  position: relative; /* Ensure it can stretch properly */
+  left: 0;
+  right: 0;
+  width: 100vw; /* Full width of the viewport */
+  margin-left: calc(-50vw + 50%); /* Override parent constraints */
+}
+
+.about-image img {
+  height: 100vh;
+  width: 50vw;
+}
+
+.about-header {
+  font-size: clamp(
+    28px,
+    5vw,
+    44px
+  ); /* Minimum: 28px, Preferred: 5% of viewport width, Maximum: 44px */
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+}
+
+.about-description {
+  font-size: clamp(
+    16px,
+    2vw,
+    19px
+  ); /* Minimum: 16px, Preferred: 2% of viewport width, Maximum: 19px */
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 20px auto;
+  color: #34495e;
+  font-weight: 300;
+}
+
+.about-philosophy {
+  background: #f9f7f5;
+  padding: 45px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  margin-top: 70px;
+}
+
+.about-philosophy h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+.about-philosophy p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #2c3e50;
+  font-weight: 400;
+}
+
+.about-process {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.process-step {
+  width: 22%;
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-10px);
+}
+
+.process-step h4 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #1a1a2e;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.process-step p {
+  font-size: 15px;
+  color: #2c3e50;
+  font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 30px 10px;
+  }
+  .about-process {
+    flex-direction: column;
+    align-items: center;
+  }
+  .process-step {
+    width: 80%;
+    margin: 20px 0;
+  }
+}

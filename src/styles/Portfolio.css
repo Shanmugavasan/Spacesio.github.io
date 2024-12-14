@@ -1,0 +1,88 @@
+/* Portfolio Section */
+.portfolio-section {
+  padding: 50px 20px;
+  background: #f7f7f7;
+  text-align: center;
+  font-family: "Playfair Display", serif; /* Apply Playfair Display font */
+  position: relative;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Portfolio Heading */
+.portfolio-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  font-family: "Playfair Display", serif; /* Ensure the heading uses Playfair Display */
+}
+
+/* Image grid setup for the portfolio items */
+.image-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  animation: scroll 30s linear infinite; /* Infinite horizontal scroll animation */
+  padding: 0;
+  margin: 0;
+}
+
+/* Portfolio Item */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* Ensure that each image has a minimum width */
+}
+
+/* Portfolio Item Image */
+.portfolio-item img {
+  width: 100%; /* Ensure the image spans the full width */
+  height: 100%; /* Ensure the image spans the full height */
+  object-fit: cover; /* Cover the container, maintaining the aspect ratio */
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation to create the scrolling effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start from the initial position */
+  }
+  100% {
+    transform: translateX(-100%); /* Move the grid to the left */
+  }
+}
+
+/* Ensure that duplicated images create a smooth, infinite loop */
+.image-grid .portfolio-item:nth-child(n + 7) {
+  margin-left: 20px; /* Small gap between duplicated images */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+  .portfolio-item {
+    min-width: 250px; /* Adjust width for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-item {
+    min-width: 200px; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item {
+    min-width: 150px; /* Adjust width for mobile devices */
+  }
+}

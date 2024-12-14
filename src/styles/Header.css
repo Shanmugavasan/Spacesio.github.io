@@ -1,0 +1,150 @@
+/* General Body Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif; /* Updated font */
+  background: #000; /* Set background to black */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(30000000px); /* Adds a blur effect behind the navbar */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px; /* Add padding to create space around the navbar */
+  background-color: rgba(0, 0, 0, 0); /* Transparent black background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  position: relative; /* Ensure hamburger can be positioned relative to this container */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width: 20vh; /* Adjust logo size */
+  object-fit: contain;
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 30px; /* Space between menu items */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500; /* Updated font weight */
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #000;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Underline effect on hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .nav {
+    display: none; /* Hide the nav by default */
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav.active {
+    display: block; /* Show the nav when active */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+    align-items: center;
+  }
+
+  /* Hamburger Icon */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute; /* Position the hamburger in the top right corner */
+    right: 20px; /* Adjust right margin as needed */
+    top: 20px; /* Adjust top margin as needed */
+  }
+
+  .hamburger .bar {
+    width: 30px; /* Adjust width */
+    height: 3px; /* Adjust height */
+    background-color: black;
+    transition: 0.3s;
+  }
+
+  /* Transform the hamburger bars when the menu is open */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(11.5px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-11.5px);
+  }
+}

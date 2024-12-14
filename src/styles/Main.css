@@ -1,0 +1,46 @@
+/* Floating Social Icons */
+.floating-social {
+  position: fixed;
+  right: 10px; /* Position from the right edge */
+  top: 92%; /* Align vertically in the center */
+  transform: translateY(-50%); /* Adjust position to be exactly in the center */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000; /* Ensure icons appear above other content */
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover {
+  transform: translateY(-3px); /* Small hover effect */
+  background-color: #444; /* Darken background color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  ); /* Instagram gradient */
+}
+
+.social-icon.whatsapp:hover {
+  background-color: #25d366; /* WhatsApp specific hover color */
+}
